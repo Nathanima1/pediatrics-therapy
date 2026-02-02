@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Play with a Purpose Therapy - Pediatric Therapy, Orthotics, Movement Therapy</title>
+  <meta name="description" content="Specialized pediatric therapy, custom orthotics, and targeted movement therapy in Greenville, TX. Play. Walk. Move. With a Purpose.">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body id="home">
+  
+  <!-- HEADER / NAVIGATION -->
+  <header class="site-header">
+    <div class="header-wrapper">
+      <div class="header-content">
+        <!-- Logo -->
+        <a href="index.html" class="logo">
+          <img src="assets/NAV/logo-play.svg" alt="Play with a Purpose Therapy" class="logo-img">
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="desktop-nav">
+          <a href="index.html" class="nav-home-icon active">
+            <svg width="29" height="28" viewBox="0 0 29 28" fill="none">
+              <path d="M14.4 2.33L3.08 11.83V24.5C3.08 25.03 3.29 25.54 3.66 25.92C4.04 26.29 4.55 26.5 5.08 26.5H11.08V18.5H17.72V26.5H23.72C24.25 26.5 24.76 26.29 25.14 25.92C25.51 25.54 25.72 25.03 25.72 24.5V11.83L14.4 2.33Z" fill="#2E3589"/>
+            </svg>
+          </a>
+          
+          <div class="nav-links">
+            <div class="nav-item has-submenu">
+              <button class="nav-link" id="playMenuBtn">
+                PLAY
+                <svg width="8" height="4" viewBox="0 0 8 4" class="arrow">
+                  <path d="M1 1L4 3L7 1" stroke="#2E3589" stroke-width="2" fill="none"/>
+                </svg>
+              </button>
+              <div class="submenu" id="playSubmenu">
+                <a href="play.html" class="submenu-link has-icon">
+                  <svg width="15" height="14" viewBox="0 0 15 14" fill="none">
+                    <path d="M7.5 1L10 6L14.5 7L10.5 10.5L11.5 15L7.5 12.5L3.5 15L4.5 10.5L0.5 7L5 6L7.5 1Z" fill="#45556C"/>
+                  </svg>
+                  Pediatrics
+                </a>
+                <a href="conditions.html" class="submenu-link">Conditions</a>
+                <a href="solutions.html" class="submenu-link">Solutions</a>
+                <a href="understanding.html" class="submenu-link">Understanding</a>
+                <a href="about.html" class="submenu-link">About</a>
+                <a href="contact.html" class="submenu-link">Contact</a>
+              </div>
+            </div>
+            
+            <a href="walk.html" class="nav-link">WALK</a>
+            <a href="move.html" class="nav-link">MOVE</a>
+          </div>
+        </nav>
+
+        <!-- Contact Button (Desktop) -->
+        <a href="contact.html" class="contact-btn desktop-contact">CONTACT</a>
+
+        <!-- Mobile Hamburger -->
+        <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MOBILE FULLSCREEN MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="close-menu" id="closeMenuBtn" aria-label="Close Menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+        <path d="M18 6L6 18M6 6L18 18" stroke="white" stroke-width="3" stroke-linecap="round"/>
+      </svg>
+    </button>
+    
+    <nav class="mobile-nav">
+      <a href="index.html" class="mobile-nav-link active">
+        <svg width="29" height="28" viewBox="0 0 29 28" fill="none" class="home-icon">
+          <path d="M14.4 2.33L3.08 11.83V24.5C3.08 25.03 3.29 25.54 3.66 25.92C4.04 26.29 4.55 26.5 5.08 26.5H11.08V18.5H17.72V26.5H23.72C24.25 26.5 24.76 26.29 25.14 25.92C25.51 25.54 25.72 25.03 25.72 24.5V11.83L14.4 2.33Z" fill="white"/>
+        </svg>
+        HOME
+      </a>
+      
+      <div class="mobile-nav-item">
+        <button class="mobile-nav-link mobile-submenu-toggle" id="mobilePlayBtn">
+          PLAY
+          <svg width="12" height="8" viewBox="0 0 12 8" class="mobile-arrow">
+            <path d="M1 1L6 6L11 1" stroke="white" stroke-width="2" fill="none"/>
+          </svg>
+        </button>
+        <div class="mobile-submenu" id="mobilePlaySubmenu">
+          <a href="play.html">Pediatrics</a>
+          <a href="conditions.html">Conditions</a>
+          <a href="solutions.html">Solutions</a>
+          <a href="understanding.html">Understanding</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+      
+      <a href="walk.html" class="mobile-nav-link">WALK</a>
+      <a href="move.html" class="mobile-nav-link">MOVE</a>
+      <a href="contact.html" class="mobile-nav-link contact-link">CONTACT</a>
+    </nav>
+  </div>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="hero-background">
+      <img src="assets/PORTAL/_hero-bg.webp" alt="" class="hero-bg-image">
+    </div>
+    
+    <div class="hero-content">
+      <div class="hero-left">
+        <div class="notification-pill">
+          <span class="pill-dot"></span>
+          Accepting Pediatric & Adult Patients
+        </div>
+        
+        <h1 class="hero-title">Play. Walk. Move.</h1>
+        <p class="hero-subtitle">With a Purpose</p>
+        
+        <a href="#services" class="hero-btn">
+          Learn More
+          <svg width="15" height="15" viewBox="0 0 15 15" fill="none">
+            <path d="M8 4L12 7.5L8 11M3 7.5H12" stroke="white" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </a>
+      </div>
+      
+      <div class="hero-right">
+        <div class="hero-image-wrapper">
+          <img src="assets/PORTAL/hero-gym.webp" alt="Pediatric therapy gym with colorful floor mats" class="hero-gym-image">
+        </div>
+        <img src="assets/PORTAL/hero-gym-cushions.webp" alt="Colorful therapy cushions" class="hero-cushions">
+      </div>
+    </div>
+    
+    <!-- Decorative Ropes -->
+    <!-- <img src="assets/PORTAL/hero-ropes.webp" alt="" class="hero-ropes" aria-hidden="true"> -->
+  </section>
+
+  <!-- THREE PATHS TO PURPOSE SECTION -->
+  <section class="three-paths" id="services">
+    <div class="section-header">
+      <h2>Three Paths to Purpose</h2>
+      <p>Pediatric Development. Orthotic Support. Movement Therapy.</p>
+    </div>
+    
+    <div class="services-grid">
+      <!-- 1. PLAY Card -->
+      <article class="service-card">
+            <div class="card-image">
+                  <img src="assets/PORTAL/section-01.webp" alt="Pediatric therapy session">
+                  <div class="card-icon">
+                        <img src="assets/PORTAL/card-icon-play.svg" alt="">
+                  </div>
+            </div>
+            <div class="card-content">
+                  <div class="card-header">
+                        <span class="card-label">Pediatrics</span>
+                        <h3 class="card-title">PLAY</h3>
+                  </div>
+                  <p class="card-description">Specialized pediatric therapy focused on development through play. We help children build skills for the job of living.</p>
+                  <a href="play.html" class="card-btn btn-blue">Learn More</a>
+            </div>
+      </article>
+
+      <!-- 2. WALK Card -->
+      <article class="service-card">
+          <div class="card-image">
+              <img src="assets/PORTAL/section-02.webp" alt="Custom orthotics and walking support">
+              <div class="card-icon">
+                   <img src="assets/PORTAL/card-icon-walk.svg" alt="Walk icon">
+              </div> 
+          </div>
+
+          <div class="card-content" style="justify-content: space-between;">
+                <div class="card-header">
+                      <span class="card-label red">Orthotics</span>
+                      <h3 class="card-title">WALK</h3>
+                </div>
+                <p class="card-description">Ensuring proper foundation with custom orthotics and bracing solutions. Walk with confidence and comfort.</p>
+                <a href="walk.html" class="card-btn btn-red">Learn More</a>
+          </div>
+      </article>
+
+      <!-- 3. MOVE Card -->
+      <article class="service-card">
+            <div class="card-image">
+                  <img src="assets/PORTAL/section-03.webp" alt="Adult movement therapy">
+                  <div class="card-icon">
+                        <img src="assets/PORTAL/card-icon-move.svg" alt="">
+                  </div>
+            </div>
+            <div class="card-content" style="justify-content: space-between;">
+                  <div class="card-header">
+                        <span class="card-label green">Adult Therapy</span>
+                        <h3 class="card-title">MOVE</h3>
+                  </div>
+                  <p class="card-description">Break the sedentary lifestyle. Targeted therapy techniques to get you moving with purpose and reducing pain.</p>
+                  <a href="move.html" class="card-btn btn-green">Learn More</a>
+            </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div class="footer-bio">
+        <img src="assets/NAV/footer-avatar.webp" alt="Michelle Shell Payne, DPT" class="footer-avatar">
+        <p>Michelle "Shell" Payne, DPT, founder and physical therapist. Doctor of Physical Therapy, Texas Woman's University.</p>
+      </div>
+      
+      <div class="footer-contact">
+        <div class="footer-item">
+          <img src="assets/NAV/footer-icon-address.svg" alt="" width="20" height="20">
+          <span>3633 TX-34, Greenville, TX 75402</span>
+        </div>
+        
+        <div class="footer-item">
+          <img src="assets/NAV/footer-icon-phone.svg" alt="" width="20" height="20">
+          <span>+1-214-557-5329</span>
+        </div>
+        
+        <div class="footer-item">
+          <img src="assets/NAV/footer-icon-email.svg" alt="" width="20" height="20">
+          <a href="mailto:drshell@playwithapurposetherapy.com">drshell@playwithapurposetherapy.com</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>© 2026 Play with a Purpose Therapy. All rights reserved.</p>
+      <span class="divider">|</span>
+      <div class="footer-links">
+        <span>Terms and Conditions</span>
+        <span>Privacy Policy</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

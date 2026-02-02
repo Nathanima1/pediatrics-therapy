@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - Play with a Purpose Therapy</title>
+  <meta name="description" content="Meet our team and learn about our approach to pediatric therapy in Greenville, TX.">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body id="about">
+  
+  <!-- HEADER / NAVIGATION -->
+  <header class="site-header">
+    <div class="header-wrapper">
+      <div class="header-content">
+        <!-- Logo -->
+        <a href="index.html" class="logo">
+          <img src="assets/NAV/logo-play.svg" alt="Play with a Purpose Therapy" class="logo-img">
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="desktop-nav">
+          <a href="index.html" class="nav-home-icon">
+            <svg width="29" height="28" viewBox="0 0 29 28" fill="none">
+              <path d="M14.4 2.33L3.08 11.83V24.5C3.08 25.03 3.29 25.54 3.66 25.92C4.04 26.29 4.55 26.5 5.08 26.5H11.08V18.5H17.72V26.5H23.72C24.25 26.5 24.76 26.29 25.14 25.92C25.51 25.54 25.72 25.03 25.72 24.5V11.83L14.4 2.33Z" fill="#2E3589"/>
+            </svg>
+          </a>
+          
+          <div class="nav-links">
+            <div class="nav-item has-submenu">
+              <button class="nav-link active" id="playMenuBtn">
+                PLAY
+                <svg width="8" height="4" viewBox="0 0 8 4" class="arrow">
+                  <path d="M1 1L4 3L7 1" stroke="#2366FC" stroke-width="2" fill="none"/>
+                </svg>
+              </button>
+              <div class="submenu" id="playSubmenu">
+                <a href="play.html" class="submenu-link has-icon">
+                  <svg width="15" height="14" viewBox="0 0 15 14" fill="none">
+                    <path d="M7.5 1L10 6L14.5 7L10.5 10.5L11.5 15L7.5 12.5L3.5 15L4.5 10.5L0.5 7L5 6L7.5 1Z" fill="#45556C"/>
+                  </svg>
+                  Pediatrics
+                </a>
+                <a href="conditions.html" class="submenu-link">Conditions</a>
+                <a href="solutions.html" class="submenu-link">Solutions</a>
+                <a href="understanding.html" class="submenu-link">Understanding</a>
+                <a href="about.html" class="submenu-link active">About</a>
+              </div>
+            </div>
+            
+            <a href="walk.html" class="nav-link">WALK</a>
+            <a href="move.html" class="nav-link">MOVE</a>
+          </div>
+        </nav>
+
+        <!-- Contact Button (Desktop) -->
+        <a href="contact.html" class="contact-btn desktop-contact">CONTACT</a>
+
+        <!-- Mobile Hamburger -->
+        <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MOBILE FULLSCREEN MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="close-menu" id="closeMenuBtn" aria-label="Close Menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+        <path d="M18 6L6 18M6 6L18 18" stroke="white" stroke-width="3" stroke-linecap="round"/>
+      </svg>
+    </button>
+    
+    <nav class="mobile-nav">
+      <a href="index.html" class="mobile-nav-link">
+        <svg width="29" height="28" viewBox="0 0 29 28" fill="none" class="home-icon">
+          <path d="M14.4 2.33L3.08 11.83V24.5C3.08 25.03 3.29 25.54 3.66 25.92C4.04 26.29 4.55 26.5 5.08 26.5H11.08V18.5H17.72V26.5H23.72C24.25 26.5 24.76 26.29 25.14 25.92C25.51 25.54 25.72 25.03 25.72 24.5V11.83L14.4 2.33Z" fill="white"/>
+        </svg>
+        HOME
+      </a>
+      
+      <div class="mobile-nav-item">
+        <button class="mobile-nav-link mobile-submenu-toggle active" id="mobilePlayBtn">
+          PLAY
+          <svg width="12" height="8" viewBox="0 0 12 8" class="mobile-arrow">
+            <path d="M1 1L6 6L11 1" stroke="white" stroke-width="2" fill="none"/>
+          </svg>
+        </button>
+        <div class="mobile-submenu" id="mobilePlaySubmenu">
+          <a href="play.html">Pediatrics</a>
+          <a href="conditions.html">Conditions</a>
+          <a href="solutions.html">Solutions</a>
+          <a href="understanding.html">Understanding</a>
+          <a href="about.html" class="active">About</a>
+        </div>
+      </div>
+      
+      <a href="walk.html" class="mobile-nav-link">WALK</a>
+      <a href="move.html" class="mobile-nav-link">MOVE</a>
+      <a href="contact.html" class="mobile-nav-link contact-link">CONTACT</a>
+    </nav>
+  </div>
+
+  <!-- HERO SECTION - Simple 700px background -->
+  <section class="hero-secondary about-hero">
+    <div class="hero-background">
+      <img src="assets/play-about/hero-img.webp" alt="" class="hero-bg-image">
+    </div>
+    
+    <div class="hero-content-wrapper dark">
+      <div class="breadcrumb">
+        <a href="index.html">Home</a>
+        <span class="separator">›</span>
+        <a href="play.html">Play</a>
+        <span class="separator">›</span>
+        <span>About</span>
+      </div>
+      
+      <h1 class="page-title">About Us</h1>
+      <p class="page-description">
+        Dedicated to helping children and adults achieve their movement goals through expert, compassionate care.
+      </p>
+    </div>
+  </section>
+
+  <!-- SECONDARY CONTENT SECTION - Overlapping white container -->
+  <section class="secondary-content">
+    <div class="secondary-container">
+      
+      <div class="secondary-card">
+        <!-- Centered Icon - nested inside card so it moves with it -->
+        <div class="section-icon-centered">
+          <img src="assets/play-about/icons-large.svg" alt="">
+        </div>
+
+        <h2 class="section-title">Meet Our Founder</h2>
+
+        <!-- FOUNDER CONTENT -->
+      <div class="founder-card">
+        <img src="assets/play-about/team-01-large.webp" alt="Michelle Shell Payne, DPT" class="founder-image">
+        <div class="founder-content">
+          <h2 class="founder-name">Michelle "Shell" Payne, DPT</h2>
+          <p class="founder-title">Founder & Physical Therapist</p>
+          <p class="founder-bio">
+            Doctor of Physical Therapy from Texas Woman's University. With years of experience in pediatric and adult therapy, Shell founded Play with a Purpose to provide specialized, individualized care in Greenville, TX.
+          </p>
+          <p class="founder-bio">
+            Her passion is helping children build the skills they need for the job of living, and empowering adults to break free from sedentary lifestyles through targeted movement therapy.
+          </p>
+        </div>
+      </div>
+      
+    </div>
+    
+  </div>
+  </section>
+
+  <!-- TEAM SECTION -->
+  <section class="team-section">
+    <div class="team-container">
+      <h2 class="section-title">Our Team</h2>
+      <p class="section-description">
+        Our dedicated therapists and support staff work together to provide exceptional care.
+      </p>
+      
+      <div class="team-grid">
+        
+        
+        <div class="team-member">
+          <img src="assets/play-about/team-02.webp" alt="Team member" class="team-photo">
+          <h3 class="team-name">Susan Payne</h3>
+          <!-- <p class="team-role">Movement Specialist</p> -->
+        </div>
+        
+        <div class="team-member">
+          <img src="assets/play-about/team-03.webp" alt="Team member" class="team-photo">
+          <h3 class="team-name">Gracey Brockway</h3>
+          <!-- <p class="team-role">Orthotics Specialist</p> -->
+        </div>
+        
+        <div class="team-member">
+          <img src="assets/play-about/team-04.webp" alt="Team member" class="team-photo">
+          <h3 class="team-name">Audra Tibboel</h3>
+          <!-- <p class="team-role">Physical Therapist</p> -->
+        </div>
+        
+        <div class="team-member">
+          <img src="assets/play-about/team-05.webp" alt="Team member" class="team-photo">
+          <h3 class="team-name">Avery Tibboel</h3>
+          <!-- <p class="team-role">Office Manager</p> -->
+        </div>
+        <div class="team-member">
+          <img src="assets/play-about/team-06.webp" alt="Team member" class="team-photo">
+          <h3 class="team-name">Sarah Johnson</h3>
+          <!-- <p class="team-role">Pediatric PT Assistant</p> -->
+        </div>
+
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PHILOSOPHY SECTION -->
+  <section class="philosophy-section">
+    <div class="philosophy-container">
+      <h2 class="section-title">Our Philosophy</h2>
+      <div class="philosophy-content">
+        <div class="philosophy-item">
+          <h3 class="philosophy-title">Play with Purpose</h3>
+          <p class="philosophy-description">
+            Every activity is intentionally designed to build skills while keeping therapy fun and engaging.
+          </p>
+        </div>
+        <div class="philosophy-item">
+          <h3 class="philosophy-title">Individualized Care</h3>
+          <p class="philosophy-description">
+            No two patients are alike. We create customized treatment plans tailored to each person's unique needs and goals.
+          </p>
+        </div>
+        <div class="philosophy-item">
+          <h3 class="philosophy-title">Family Partnership</h3>
+          <p class="philosophy-description">
+            We believe families are essential partners in the therapeutic process, and we equip them with tools for success.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA SECTION -->
+  <section class="cta-section">
+    <div class="cta-container">
+      <h2 class="cta-title">Ready to Join Our Community?</h2>
+      <p class="cta-description">We'd love to help you or your child achieve your movement goals.</p>
+      <a href="contact.html" class="cta-btn">
+        Get in Touch
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+          <path d="M8 4L12 8L8 12M4 8H12" stroke="white" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div class="footer-bio">
+        <img src="assets/NAV/footer-avatar.webp" alt="Michelle Shell Payne, DPT" class="footer-avatar">
+        <p>Michelle "Shell" Payne, DPT, founder and physical therapist. Doctor of Physical Therapy, Texas Woman's University.</p>
+      </div>
+      
+      <div class="footer-contact">
+        <div class="footer-item">
+          <img src="assets/NAV/footer-icon-address.svg" alt="" width="20" height="20">
+          <span>3633 TX-34, Greenville, TX 75402</span>
+        </div>
+        
+        <div class="footer-item">
+          <img src="assets/NAV/footer-icon-phone.svg" alt="" width="20" height="20">
+          <span>+1-214-557-5329</span>
+        </div>
+        
+        <div class="footer-item">
+          <img src="assets/NAV/footer-icon-email.svg" alt="" width="20" height="20">
+          <a href="mailto:drshell@playwithapurposetherapy.com">drshell@playwithapurposetherapy.com</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>© 2026 Play with a Purpose Therapy. All rights reserved.</p>
+      <span class="divider">|</span>
+      <div class="footer-links">
+        <span>Terms and Conditions</span>
+        <span>Privacy Policy</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

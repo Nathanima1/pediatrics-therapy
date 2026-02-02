@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Custom Orthotics - Walk with a Purpose</title>
+  <meta name="description" content="Custom orthotics and bracing solutions to support proper gait and mobility in Greenville, TX.">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body id="walk">
+  
+  <!-- HEADER / NAVIGATION -->
+  <header class="site-header">
+    <div class="header-wrapper">
+      <div class="header-content">
+        <!-- Logo -->
+        <a href="index.html" class="logo">
+          <img src="assets/NAV/logo-walk.svg" alt="Play with a Purpose Therapy" class="logo-img">
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="desktop-nav">
+          <a href="index.html" class="nav-home-icon">
+            <svg width="29" height="28" viewBox="0 0 29 28" fill="none">
+              <path d="M14.4 2.33L3.08 11.83V24.5C3.08 25.03 3.29 25.54 3.66 25.92C4.04 26.29 4.55 26.5 5.08 26.5H11.08V18.5H17.72V26.5H23.72C24.25 26.5 24.76 26.29 25.14 25.92C25.51 25.54 25.72 25.03 25.72 24.5V11.83L14.4 2.33Z" fill="#2E3589"/>
+            </svg>
+          </a>
+          
+          <div class="nav-links">
+            <div class="nav-item has-submenu">
+              <button class="nav-link" id="playMenuBtn">
+                PLAY
+                <svg width="8" height="4" viewBox="0 0 8 4" class="arrow">
+                  <path d="M1 1L4 3L7 1" stroke="#2366FC" stroke-width="2" fill="none"/>
+                </svg>
+              </button>
+              <div class="submenu" id="playSubmenu">
+                <a href="play.html" class="submenu-link has-icon">
+                  <svg width="15" height="14" viewBox="0 0 15 14" fill="none">
+                    <path d="M7.5 1L10 6L14.5 7L10.5 10.5L11.5 15L7.5 12.5L3.5 15L4.5 10.5L0.5 7L5 6L7.5 1Z" fill="#45556C"/>
+                  </svg>
+                  Pediatrics
+                </a>
+                <a href="conditions.html" class="submenu-link">Conditions</a>
+                <a href="solutions.html" class="submenu-link">Solutions</a>
+                <a href="understanding.html" class="submenu-link">Understanding</a>
+                <a href="about.html" class="submenu-link">About</a>
+                <a href="contact.html" class="submenu-link">Contact</a>
+              </div>
+            </div>
+            
+            <a href="walk.html" class="nav-link active">WALK</a>
+            <a href="move.html" class="nav-link">MOVE</a>
+          </div>
+        </nav>
+
+        <!-- Contact Button (Desktop) -->
+        <a href="contact.html" class="contact-btn desktop-contact">CONTACT</a>
+
+        <!-- Mobile Hamburger -->
+        <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MOBILE FULLSCREEN MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="close-menu" id="closeMenuBtn" aria-label="Close Menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+        <path d="M18 6L6 18M6 6L18 18" stroke="white" stroke-width="3" stroke-linecap="round"/>
+      </svg>
+    </button>
+    
+    <nav class="mobile-nav">
+      <a href="index.html" class="mobile-nav-link">
+        <svg width="29" height="28" viewBox="0 0 29 28" fill="none" class="home-icon">
+          <path d="M14.4 2.33L3.08 11.83V24.5C3.08 25.03 3.29 25.54 3.66 25.92C4.04 26.29 4.55 26.5 5.08 26.5H11.08V18.5H17.72V26.5H23.72C24.25 26.5 24.76 26.29 25.14 25.92C25.51 25.54 25.72 25.03 25.72 24.5V11.83L14.4 2.33Z" fill="white"/>
+        </svg>
+        HOME
+      </a>
+      
+      <div class="mobile-nav-item">
+        <button class="mobile-nav-link mobile-submenu-toggle" id="mobilePlayBtn">
+          PLAY
+          <svg width="12" height="8" viewBox="0 0 12 8" class="mobile-arrow">
+            <path d="M1 1L6 6L11 1" stroke="white" stroke-width="2" fill="none"/>
+          </svg>
+        </button>
+        <div class="mobile-submenu" id="mobilePlaySubmenu">
+          <a href="play.html">Pediatrics</a>
+          <a href="conditions.html">Conditions</a>
+          <a href="solutions.html">Solutions</a>
+          <a href="understanding.html">Understanding</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+      
+      <a href="walk.html" class="mobile-nav-link active">WALK</a>
+      <a href="move.html" class="mobile-nav-link">MOVE</a>
+      <a href="contact.html" class="mobile-nav-link contact-link">CONTACT</a>
+    </nav>
+  </div>
+
+  <!-- HERO SECTION -->
+  <section class="hero-secondary walk-hero">
+    <div class="hero-background">
+      <img src="assets/WALK/hero-bg.webp" alt="" class="hero-bg-image">
+    </div>
+    
+    <div class="hero-content-wrapper">
+      <div class="breadcrumb">
+        <a href="index.html">Home</a>
+        <span class="separator">›</span>
+        <span>Walk</span>
+      </div>
+      
+      <div class="walk-label">ORTHOTICS</div>
+      
+      <h1 class="page-title walk-title">WALK with a PURPOSE</h1>
+      <p class="page-description walk-description">
+        Ensuring proper foundation with custom orthotics
+      </p>
+    </div>
+  </section>
+
+  <!-- SECONDARY CONTENT - CUSTOM ORTHOTIC SUPPORT -->
+  <section class="walk-secondary-section custom-orthotic-support">
+    <div class="walk-secondary-container">
+      
+      <!-- Image Column -->
+      <div class="walk-secondary-image">
+        <div class="walk-image-frame">
+        <img src="assets/WALK/section-01A.webp" alt="Custom orthotic support demonstration">
+        </div>
+      </div>
+
+
+      <!-- Content Column -->
+      <div class="walk-secondary-content">
+        <div class="walk-secondary-messaging">
+          <h2 class="walk-secondary-title">Custom Orthotic Support</h2>
+          <p class="walk-secondary-subtitle">Trained to fit & cast custom foot orthotic supports and improve posture, walking, balance & running.</p>
+        </div>
+
+        <div class="walk-orthotics-benefits">
+          <h3 class="walk-benefits-heading">What orthotics can do for you:</h3>
+          <div class="walk-benefits-columns">
+            <div class="walk-benefits-column">
+              <p>✔︎ Awkward Walking & Running</p>
+              <p>✔︎ Enjoyment of Physical Activities</p>
+              <p>✔︎ Flat Feet</p>
+            </div>
+            <div class="walk-benefits-column">
+              <p>✔︎ Painful Feet & Knees</p>
+              <p>✔︎ Poor Balance</p>
+              <p>✔︎ Tripping & Falling</p>
+            </div>
+          </div>
+        </div>
+
+        <a href="contact.html" class="walk-consultation-btn">
+          Schedule Consultation
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M8 4L12 8L8 12M4 8H12" stroke="white" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECONDARY CONTENT - ABOUT ORTHOTICS -->
+  <section class="walk-secondary-section about-orthotics">
+    <div class="walk-secondary-container">
+      
+      <!-- Content Column -->
+      <div class="walk-secondary-content">
+        <h2 class="walk-secondary-title">About Orthotics</h2>
+        <div class="walk-about-text">
+          <p>Orthotics are devices placed inside the shoes with the purpose of restoring the natural foot function.</p>
+          <p>When fitted correctly, orthotic devices are comfortable & come in a variety of styles for sport performance, night-time wear, daily use and many others.</p>
+        </div>
+      </div>
+
+      <!-- Image Column -->
+      
+      <div class="walk-secondary-image">
+        <div class="walk-image-frame">
+          <img src="assets/WALK/section-02.webp" alt="Orthotic assessment and fitting">
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA SECTION -->
+  <section class="cta-section walk-cta">
+    <div class="cta-container">
+      <h2 class="cta-title">Ready to Walk with Confidence?</h2>
+      <p class="cta-description">Schedule an orthotic assessment to see how custom solutions can help.</p>
+      <a href="contact.html" class="cta-btn btn-red">
+        Book Assessment
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+          <path d="M8 4L12 8L8 12M4 8H12" stroke="white" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div class="footer-bio">
+        <img src="assets/NAV/footer-avatar.webp" alt="Michelle Shell Payne, DPT" class="footer-avatar">
+        <p>Michelle "Shell" Payne, DPT, founder and physical therapist. Doctor of Physical Therapy, Texas Woman's University.</p>
+      </div>
+      
+      <div class="footer-contact">
+        <div class="footer-item">
+          <img src="assets/NAV/footer-icon-address.svg" alt="" width="20" height="20">
+          <span>3633 TX-34, Greenville, TX 75402</span>
+        </div>
+        
+        <div class="footer-item">
+          <img src="assets/NAV/footer-icon-phone.svg" alt="" width="20" height="20">
+          <span>+1-214-557-5329</span>
+        </div>
+        
+        <div class="footer-item">
+          <img src="assets/NAV/footer-icon-email.svg" alt="" width="20" height="20">
+          <a href="mailto:drshell@playwithapurposetherapy.com">drshell@playwithapurposetherapy.com</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>© 2026 Play with a Purpose Therapy. All rights reserved.</p>
+      <span class="divider">|</span>
+      <div class="footer-links">
+        <span>Terms and Conditions</span>
+        <span>Privacy Policy</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
