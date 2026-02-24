@@ -844,12 +844,12 @@ p.card-description {
   display: flex;
   gap: 16px;
   align-items: center;
-  max-width: 512px;
+  max-width: 530px;
 }
 
 .footer-avatar {
-  width: 61px;
-  height: 61px;
+  width: 75px;
+  height: 75px;
   border-radius: 50%;
   border: 1.039px solid var(--text-dark);
   object-fit: cover;
@@ -873,7 +873,7 @@ p.card-description {
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 12px;
+  font-size: 14px;
   color: var(--text-dark);
   font-weight: 600;
 }
