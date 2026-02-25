@@ -80,12 +80,21 @@ document.addEventListener('DOMContentLoaded', function() {
       submitBtn.disabled = true;
       
       // Submit to Formsubmit.co via fetch
+      console.log('Submitting form to:', contactForm.action);
+      console.log('Form data:', Object.fromEntries(new FormData(contactForm)));
+      
       fetch(contactForm.action, {
         method: 'POST',
         body: new FormData(contactForm),
         headers: { 'Accept': 'application/json' }
       })
       .then(response => {
+        console.log('Response status:', response.status);
+        console.log('Response ok:', response.ok);
+        return response.json();
+      })
+      .then(data => {
+        console.log('Response data:', data);
         const contactCard = contactForm.closest('.contact-card');
         if (contactCard) {
           contactCard.innerHTML = `
@@ -102,6 +111,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
       })
       .catch(error => {
+        console.error('Form submission error:', error);
         submitBtn.textContent = 'Send Message';
         submitBtn.disabled = false;
         alert('Something went wrong. Please try again or call us directly.');
