@@ -2414,23 +2414,13 @@ p.card-description {
 }
 
 .walk-image-frame {
-  position: relative;
   width: 100%;
-  height: 532px;
-  transform: rotate(3deg);
-  border: 12px solid white;
-  border-radius: 40px;
-  overflow: hidden;
-  box-shadow: 0px 5px 18px rgba(0, 0, 0, 0.3);
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0));
 }
 
 .walk-image-frame img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transform: rotate(-3deg) scale(1.2);
-  transform-origin: center;
+  height: auto;
+  display: block;
 }
 
 /* Content Styles */
@@ -3005,7 +2995,6 @@ p.card-description {
     max-width: 500px;
   }
   
-  .walk-image-frame,
   .move-image-frame {
     height: 400px;
   }
@@ -3170,7 +3159,6 @@ p.card-description {
     padding: 16px 40px;
   }
   
-  .walk-image-frame,
   .move-image-frame {
     height: 350px;
   }
