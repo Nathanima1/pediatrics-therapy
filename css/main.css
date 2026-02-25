@@ -1482,14 +1482,14 @@ p.card-description {
 }
 
 .form-submit-btn {
-  width: 214px;
+  min-width: 214px;
   margin: 0 auto;
   padding: 17px 40px;
   font-family: 'Inter', sans-serif;
   font-size: 20.78px;
   font-weight: 700;
-  line-height: 29.093px;
-  letter-spacing: -0.4667px;
+  /* line-height: 29.093px;
+  letter-spacing: -0.4667px; */
   color: white;
   background: linear-gradient(168.037deg, rgb(84, 137, 255) 24.93%, rgb(58, 70, 214) 122.98%);
   border: none;
@@ -1560,7 +1560,7 @@ p.card-description {
 }
 
 .map-container {
-  flex: 0 0 auto;
+  flex: 1 0 auto;
   width: 581px;
   height: 533px;
   border: 22px solid white;
@@ -3020,9 +3020,18 @@ p.card-description {
 }
 
 .map-container {
-  border-radius: 16px;
+  border: 22px solid white;
+  border-radius: 15px;
+  box-shadow: 0px 1px 19px rgba(0, 0, 0, 0.27);
   overflow: hidden;
-  height: 500px;
+  height: 533px;
+}
+
+.map-container img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .clinic-details {

@@ -63,7 +63,7 @@ body {
   width: 60px;
   height: 60px;
   background: var(--bg-light);
-  transition: background 0.3s;
+  transition: transform 0.3s;
 }
 
 .nav-home-icon:hover {
@@ -93,7 +93,7 @@ body {
   background: transparent;
   border: none;
   cursor: pointer;
-  transition: background 0.3s;
+  transition: transform 0.3s;
 }
 
 .nav-link:hover {
@@ -136,7 +136,7 @@ body {
   color: var(--text-dark);
   text-decoration: none;
   font-size: 16px;
-  transition: background 0.2s;
+  transition: transform 0.2s;
 }
 
 .submenu a:hover {
@@ -250,7 +250,8 @@ body {
   border: none;
   cursor: pointer;
   width: 100%;
-  transition: background 0.3s;
+  
+  transition: background 0.3s, color 0.3s;
 }
 
 .mobile-nav-link:hover {
@@ -443,7 +444,7 @@ body {
 }
 
 .contact-form {
-  max-width: 873px;
+  /* max-width: 873px; */
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -534,12 +535,20 @@ body {
 }
 
 .map-container {
-  height: 547px;
-  border: 8px solid #B9B9B9;
-  border-radius: 35px;
+  width: 100%;
+  max-width: 581px;
+  height: 533px;
+  border: 22px solid var(--white);
+  border-radius: 15px;
   overflow: hidden;
+  box-shadow: 0px 1px 19px 0px rgba(0, 0, 0, 0.27);
 }
-
+.map-container img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 .clinic-details {
   display: flex;
   flex-direction: column;
@@ -679,6 +688,7 @@ body {
   }
   
   .map-container {
+    max-width: 100%;
     height: 400px;
   }
   
@@ -764,6 +774,7 @@ body {
   }
   
   .map-container {
+    max-width: 100%;
     height: 300px;
   }
   
