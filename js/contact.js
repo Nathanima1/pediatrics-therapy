@@ -75,18 +75,23 @@ document.addEventListener('DOMContentLoaded', function() {
     contactForm.addEventListener('submit', function(e) {
       e.preventDefault();
       
-      // Get form data
-      const formData = new FormData(contactForm);
-      const data = Object.fromEntries(formData);
+      // Get the contact card that wraps the form
+      const contactCard = contactForm.closest('.contact-card');
       
-      // Here you would typically send the data to your server
-      console.log('Form submitted:', data);
-      
-      // Show success message (you can replace this with a proper notification)
-      alert('Thank you for your message! We will get back to you soon.');
-      
-      // Reset form
-      contactForm.reset();
+      if (contactCard) {
+        // Replace card content with confirmation message
+        contactCard.innerHTML = `
+          <div class="form-confirmation">
+            <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="40" cy="40" r="40" fill="#5489FF" opacity="0.1"/>
+              <circle cx="40" cy="40" r="30" fill="#5489FF" opacity="0.2"/>
+              <path d="M28 40L36 48L52 32" stroke="#5489FF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <h2 class="confirmation-title">Your message was sent!</h2>
+            <p class="confirmation-text">We will contact you shortly.</p>
+          </div>
+        `;
+      }
     });
   }
   
