@@ -91,23 +91,24 @@ document.addEventListener('DOMContentLoaded', function() {
       .then(response => {
         console.log('Response status:', response.status);
         console.log('Response ok:', response.ok);
-        return response.json();
-      })
-      .then(data => {
-        console.log('Response data:', data);
-        const contactCard = contactForm.closest('.contact-card');
-        if (contactCard) {
-          contactCard.innerHTML = `
-            <div class="form-confirmation">
-              <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="40" cy="40" r="40" fill="#5489FF" opacity="0.1"/>
-                <circle cx="40" cy="40" r="30" fill="#5489FF" opacity="0.2"/>
-                <path d="M28 40L36 48L52 32" stroke="#5489FF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-              <h2 class="confirmation-title">Your message was sent!</h2>
-              <p class="confirmation-text">We will contact you shortly.</p>
-            </div>
-          `;
+        
+        if (response.ok) {
+          const contactCard = contactForm.closest('.contact-card');
+          if (contactCard) {
+            contactCard.innerHTML = `
+              <div class="form-confirmation">
+                <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="40" cy="40" r="40" fill="#5489FF" opacity="0.1"/>
+                  <circle cx="40" cy="40" r="30" fill="#5489FF" opacity="0.2"/>
+                  <path d="M28 40L36 48L52 32" stroke="#5489FF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <h2 class="confirmation-title">Your message was sent!</h2>
+                <p class="confirmation-text">We will contact you shortly.</p>
+              </div>
+            `;
+          }
+        } else {
+          throw new Error('Server responded with status: ' + response.status);
         }
       })
       .catch(error => {
