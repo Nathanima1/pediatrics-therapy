@@ -75,23 +75,37 @@ document.addEventListener('DOMContentLoaded', function() {
     contactForm.addEventListener('submit', function(e) {
       e.preventDefault();
       
-      // Get the contact card that wraps the form
-      const contactCard = contactForm.closest('.contact-card');
+      const submitBtn = contactForm.querySelector('.form-submit-btn');
+      submitBtn.textContent = 'Sending...';
+      submitBtn.disabled = true;
       
-      if (contactCard) {
-        // Replace card content with confirmation message
-        contactCard.innerHTML = `
-          <div class="form-confirmation">
-            <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="40" cy="40" r="40" fill="#5489FF" opacity="0.1"/>
-              <circle cx="40" cy="40" r="30" fill="#5489FF" opacity="0.2"/>
-              <path d="M28 40L36 48L52 32" stroke="#5489FF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-            <h2 class="confirmation-title">Your message was sent!</h2>
-            <p class="confirmation-text">We will contact you shortly.</p>
-          </div>
-        `;
-      }
+      // Submit to Formsubmit.co via fetch
+      fetch(contactForm.action, {
+        method: 'POST',
+        body: new FormData(contactForm),
+        headers: { 'Accept': 'application/json' }
+      })
+      .then(response => {
+        const contactCard = contactForm.closest('.contact-card');
+        if (contactCard) {
+          contactCard.innerHTML = `
+            <div class="form-confirmation">
+              <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="40" cy="40" r="40" fill="#5489FF" opacity="0.1"/>
+                <circle cx="40" cy="40" r="30" fill="#5489FF" opacity="0.2"/>
+                <path d="M28 40L36 48L52 32" stroke="#5489FF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <h2 class="confirmation-title">Your message was sent!</h2>
+              <p class="confirmation-text">We will contact you shortly.</p>
+            </div>
+          `;
+        }
+      })
+      .catch(error => {
+        submitBtn.textContent = 'Send Message';
+        submitBtn.disabled = false;
+        alert('Something went wrong. Please try again or call us directly.');
+      });
     });
   }
   

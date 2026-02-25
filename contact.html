@@ -143,17 +143,23 @@
 
         <h2 class="section-title">Schedule Consultation</h2>
         
-        <form class="contact-form" id="contactForm">
+        <form class="contact-form" id="contactForm" action="https://formsubmit.co/drshell@playwithapurposetherapy.com" method="POST">
+          <!-- Formsubmit config -->
+          <input type="hidden" name="_subject" value="New Contact Form Submission">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_template" value="table">
+          <input type="text" name="_honey" style="display:none">
+
           <div class="form-row">
-            <input type="text" placeholder="First Name" required class="form-input">
-            <input type="text" placeholder="Last Name" required class="form-input">
+            <input type="text" name="first-name" placeholder="First Name" required class="form-input">
+            <input type="text" name="last-name" placeholder="Last Name" required class="form-input">
           </div>
           
-          <input type="email" placeholder="Email Address" required class="form-input">
+          <input type="email" name="email" placeholder="Email Address" required class="form-input">
           
-          <input type="tel" placeholder="Phone Number" required class="form-input">
+          <input type="tel" name="phone" placeholder="Phone Number" required class="form-input">
           
-          <textarea placeholder="How can we help?" rows="6" required class="form-textarea"></textarea>
+          <textarea name="message" placeholder="How can we help?" rows="6" required class="form-textarea"></textarea>
           
           <button type="submit" class="form-submit-btn">Send Message</button>
         </form>
@@ -205,10 +211,9 @@
           </div>
           <div class="detail-text">
             <strong>Email</strong>
-            <p><a href="mailto:info@playwithapurposetherapy.com">nplatts@gmail.com</a><br>
-            <!-- <p><a href="mailto:info@playwithapurposetherapy.com">info@playwithapurposetherapy.com</a><br>
+            <p><a href="mailto:info@playwithapurposetherapy.com">info@playwithapurposetherapy.com</a><br>
             <a href="mailto:drshell@playwithapurposetherapy.com">drshell@playwithapurposetherapy.com</a><br>
-            <a href="mailto:susanplaywithapurposetherapy@gmail.com">susanplaywithapurposetherapy@gmail.com</a></p> -->
+            <a href="mailto:susanplaywithapurposetherapy@gmail.com">susanplaywithapurposetherapy@gmail.com</a></p>
           </div>
         </div>
         
