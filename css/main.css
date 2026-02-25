@@ -1,4 +1,30 @@
-/* MAIN STYLES - LANDING PAGE */
+/* ==========================================================================
+   MAIN.CSS — SINGLE SOURCE OF TRUTH FOR ALL STYLES
+   ==========================================================================
+   
+   ALL pages load ONLY this file. Do NOT create page-specific CSS files.
+   Previously, duplicate styles in contact.css, landing.css, and a second
+   contact block within this file caused 2+ weeks of cascade conflicts.
+   Those files have been archived to assets/archive/css-deprecated/.
+   
+   STRUCTURE:
+   1. Variables & Reset            (line ~15)
+   2. Header / Navigation          (line ~80)
+   3. Mobile Menu                  (line ~315)
+   4. Landing Page (index.html)    (line ~470)  — Hero, Three Paths, Cards
+   5. Footer                       (line ~840)
+   6. Responsive (Landing)         (line ~930)
+   7. Subpage Hero Pattern         (line ~1130) — Breadcrumb, Page Title
+   8. Page-specific Hero Overrides (line ~1220) — Play, Walk, Move, Contact
+   9. Contact Form & Clinic        (line ~1400) — THE ONLY contact styles
+   10. Secondary Page Archetype    (line ~1630) — Card overlap pattern
+   11. Page-specific Content       (line ~1750+) — Conditions, Solutions, etc.
+   12. Responsive (All Pages)      (line ~3090+)
+   
+   RULE: Never duplicate selectors. Search before adding new rules.
+   ========================================================================== */
+
+/* MAIN STYLES */
 
 :root {
   --main-blue: #353D98;
@@ -2898,195 +2924,18 @@ p.card-description {
   margin: 0;
 }
 
-/* ========== CONTACT PAGE STYLES ========== */
-.consultation-section {
-  background: white;
-  padding: 100px 0;
-}
-
-.form-card {
-  max-width: 600px;
-  margin: 0 auto;
-  background: white;
-  border-radius: 16px;
-  padding: 50px 40px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  text-align: center;
-}
-
-.form-icon-wrapper {
-  margin-bottom: 30px;
-}
-
-.form-icon {
-  display: inline-block;
-}
-
-.form-card h2 {
-  font-family: 'Inter', sans-serif;
-  font-weight: 700;
-  font-size: 32px;
-  line-height: 1.3;
-  color: var(--text-darker);
-  margin: 0 0 40px;
-}
-
-.contact-form {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.form-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-}
-
-.contact-form input,
-.contact-form textarea {
-  width: 100%;
-  padding: 14px 18px;
-  border: 2px solid #E5E7EB;
-  border-radius: 8px;
-  font-family: 'Inter', sans-serif;
-  font-size: 16px;
-  color: var(--text-dark);
-  transition: border-color 0.2s;
-}
-
-.contact-form input:focus,
-.contact-form textarea:focus {
-  outline: none;
-  border-color: var(--light-blue);
-}
-
-.contact-form textarea {
-  resize: vertical;
-  min-height: 120px;
-}
-
-.submit-btn {
-  background: var(--light-blue);
-  color: white;
-  padding: 16px 40px;
-  border: none;
-  border-radius: 8px;
-  font-family: 'Inter', sans-serif;
-  font-weight: 700;
-  font-size: 16px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.submit-btn:hover {
-  background: var(--secondary-blue);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(21, 93, 252, 0.4);
-}
-
-.clinic-section {
-  background: var(--bg-light);
-  padding: 100px 0;
-}
-
-.clinic-section h2 {
-  font-family: 'Inter', sans-serif;
-  font-weight: 700;
-  font-size: 40px;
-  line-height: 1.3;
-  color: var(--text-darker);
-  text-align: center;
-  margin: 0 0 10px;
-}
-
-.clinic-subtitle {
-  font-family: 'Inter', sans-serif;
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 1.5;
-  color: var(--text-dark);
-  text-align: center;
-  margin: 0 0 60px;
-}
-
-.clinic-content {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 0 60px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
-}
-
-.map-container {
-  border: 22px solid white;
-  border-radius: 15px;
-  box-shadow: 0px 1px 19px rgba(0, 0, 0, 0.27);
-  overflow: hidden;
-  height: 533px;
-}
-
-.map-container img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.clinic-details {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-}
-
-.detail-item {
-  display: flex;
-  gap: 20px;
-  align-items: flex-start;
-}
-
-.detail-icon {
-  flex-shrink: 0;
-  width: 48px;
-  height: 48px;
-  background: rgba(84, 137, 255, 0.1);
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.detail-text {
-  flex: 1;
-}
-
-.detail-text strong {
-  font-family: 'Inter', sans-serif;
-  font-weight: 700;
-  font-size: 16px;
-  color: var(--text-darker);
-  display: block;
-  margin-bottom: 8px;
-}
-
-.detail-text p {
-  font-family: 'Inter', sans-serif;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 1.6;
-  color: var(--text-dark);
-  margin: 0;
-}
-
-.detail-text a {
-  color: var(--light-blue);
-  text-decoration: none;
-}
-
-.detail-text a:hover {
-  text-decoration: underline;
-}
+/* ========== CONTACT PAGE STYLES ==========
+   REMOVED: Duplicate block that was overriding the correct styles
+   defined earlier (around line 1440). The duplicate had different
+   values for .contact-form, .clinic-section, .clinic-content,
+   .clinic-details, .detail-text, etc. — causing cascade conflicts.
+   
+   All contact/clinic styles are now in ONE location only:
+   - Contact hero overrides: ~line 1346
+   - Contact secondary/card: ~line 1403
+   - Contact form: ~line 1438
+   - Clinic section: ~line 1506
+   ========================================== */
 
 /* ========== MOBILE RESPONSIVE UPDATES ========== */
 @media (max-width: 1024px) {

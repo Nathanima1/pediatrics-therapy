@@ -620,6 +620,8 @@ body {
   gap: 16px;
   align-items: center;
   max-width: 512px;
+  color: #45556C;
+
 }
 
 .footer-avatar {
@@ -634,6 +636,11 @@ body {
   font-size: 14px;
   line-height: 1.5;
   color: var(--text-dark);
+  font-family: Inter;
+font-size: 14px;
+font-style: thin;
+font-weight: 100;
+line-height: 19px; /* 135.714% */
 }
 
 .footer-contact {
