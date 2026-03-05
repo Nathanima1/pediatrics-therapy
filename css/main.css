@@ -36,7 +36,7 @@
   --green: #00A63E;
   --text-dark: #45556C;
   --text-darker: #0F172B;
-  --bg-light: #F0F4F6;
+  --bg-light: #FAFBFB;
   --bg-white: #FFFFFF;
   --max-width: 1500px;
 }
@@ -574,7 +574,8 @@ body:hover {
 
 .hero-btn {
   background: #EDEDED;
-  color: var(--light-blue);
+  /* color: var(--light-blue); */
+  color: #353D98;
   text-transform: uppercase;
   padding: 22px 43px;
   border-radius: 11px;
@@ -858,7 +859,7 @@ p.card-description {
   padding: 0 100px;
   height: 107px;
   background: var(--bg-light);
-  border-top: 1px solid #C0C0C0;
+  border-top: 1px solid #E2E2E2;
 }
 
 .footer-bio {
@@ -1203,10 +1204,10 @@ p.card-description {
 
 .page-title {
   font-family: 'Inter', sans-serif;
-  font-weight: 400;
+  font-weight: 500;
   font-size: 56px;
   line-height: 1.2;
-  letter-spacing: -2px;
+  letter-spacing: -1.23px;
   color: var(--secondary-blue);
   margin: 60px 0 20px;
 }
@@ -1223,11 +1224,15 @@ p.card-description {
 .page-description {
   font-family: 'Inter', sans-serif;
   font-weight: 400;
-  font-size: 18px;
+  font-size: 24px;
   line-height: 1.6;
   color: var(--text-dark);
   max-width: 600px;
   margin: 0;
+}
+#about .page-description,
+#about .page-title {
+  color: var(--bg-light);
 }
 
 .hero-icon-large {
@@ -1404,8 +1409,7 @@ p.card-description {
   margin-bottom: 27px;
 }
 
-.contact-description,
-.conditions-description {
+.contact-description {
   font-family: 'Inter', sans-serif;
   font-weight: 300;
   font-size: 28px;
@@ -1413,11 +1417,6 @@ p.card-description {
   letter-spacing: -0.3343px;
   max-width: 520px;
   color: #000;
-}
-
-.conditions-description {
-  max-width: 461px;
-  text-shadow: 0px 4px 21.2px white;
 }
 
 /* Contact Secondary Section */
@@ -1573,6 +1572,7 @@ p.card-description {
 .clinic-section .clinic-content {
   position: relative;
   z-index: 1;
+  margin-bottom: 100px;
 }
 
 .clinic-title {
@@ -1778,7 +1778,7 @@ p.card-description {
 }
 
 .content-image-centered {
-  max-width: 600px;
+  max-width: 1000px;
   margin: 0 auto 60px;
 }
 
@@ -1810,19 +1810,21 @@ p.card-description {
 }
 
 .secondary-card .founder-card {
-  background: var(--bg-light);
   border-radius: 16px;
   overflow: hidden;
   display: grid;
-  grid-template-columns: 300px 1fr;
-  box-shadow: none;
+  grid-template-columns: 430px 1fr;
+  box-shadow: 0 0 24px rgba(0, 0, 0, 0.13);
   margin: 0;
 }
 
 .secondary-card .founder-image {
   width: 100%;
   height: 100%;
+  min-height: 0;
+  display: block;
   object-fit: cover;
+  align-self: stretch;
 }
 
 .secondary-card .founder-content {
@@ -2108,19 +2110,63 @@ p.card-description {
 .condition-title {
   font-family: 'Inter', sans-serif;
   font-weight: 700;
-  font-size: 28px;
-  line-height: 1.3;
-  color: var(--text-darker);
-  margin: 0 0 16px;
+  font-size: 21px;
+  line-height: 37.5px;
+  color: var(--text-dark);
+  margin: 0 0 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.0824px;
 }
 
 .condition-description {
   font-family: 'Inter', sans-serif;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 1.6;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 32px;
   color: var(--text-dark);
   margin: 0;
+  letter-spacing: 0.0824px;
+}
+
+/* Condition Checklists */
+.condition-checklist {
+  display: flex;
+  gap: 81px;
+  margin-top: 9px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 36px;
+  color: var(--text-dark);
+  letter-spacing: 0.0824px;
+}
+
+.condition-checklist.columns-1 {
+  gap: 0;
+}
+
+.condition-checklist.columns-3 {
+  gap: 81px;
+}
+
+.checklist-column p {
+  margin: 0;
+  white-space: nowrap;
+}
+
+/* Section Tagline */
+.section-tagline {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 52px;
+  color: var(--text-dark);
+  text-align: center;
+  letter-spacing: -0.5309px;
+  margin-top: 60px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* ========== SOLUTIONS CONTENT SECTION ========== */
@@ -2460,31 +2506,30 @@ p.card-description {
 .walk-secondary-title {
   font-family: 'Inter', sans-serif;
   font-weight: 700;
-  font-size: 43px;
+  font-size: 36px;
   line-height: 40px;
-  color: var(--text-darker);
+  color: var(--text-dark);
   margin: 0 0 16px;
   letter-spacing: -0.53px;
 }
 
 .walk-secondary-subtitle {
   font-family: 'Inter', sans-serif;
-  font-weight: 600;
-  font-size: 25px;
-  line-height: 35px;
-  color: var(--text-darker);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 32px;
+  color: var(--text-dark);
   margin: 0;
-  letter-spacing: -0.5px;
 }
 
 /* About Orthotics Text */
 .walk-about-text {
   font-family: 'Inter', sans-serif;
   font-weight: 500;
-  font-size: 23.137px;
-  line-height: 43px;
-  color: var(--text-darker);
-  letter-spacing: 0.0824px;
+  font-size: 16px;
+  line-height: 32px;
+  color: var(--text-dark);
+  margin-bottom: 50px;
 }
 
 .walk-about-text p {
@@ -2528,6 +2573,18 @@ p.card-description {
   color: var(--text-darker);
   margin: 0;
   letter-spacing: -0.3125px;
+}
+
+.walk-benefits-list {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 36px;
+  color: var(--text-dark);
+}
+
+.walk-benefits-list p {
+  margin: 0;
 }
 
 /* Schedule Consultation Button */
@@ -2661,7 +2718,7 @@ p.card-description {
 .move-secondary-title {
   font-family: 'Inter', sans-serif;
   font-weight: 700;
-  font-size: 43px;
+  font-size: 36px;
   line-height: 40px;
   color: var(--text-darker);
   margin: 0 0 16px;
@@ -2670,32 +2727,32 @@ p.card-description {
 
 .move-secondary-subtitle {
   font-family: 'Inter', sans-serif;
-  font-weight: 600;
-  font-size: 25px;
-  line-height: 35px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 32px;
   color: var(--text-darker);
   margin: 0;
-  letter-spacing: -0.5px;
+  letter-spacing: 0;
 }
 
 /* Our Approach Content */
 .move-approach-intro {
   font-family: 'Inter', sans-serif;
   font-weight: 500;
-  font-size: 23.137px;
-  line-height: 43px;
+  font-size: 18px;
+  line-height: 32px;
   color: var(--text-darker);
   margin: 0 0 29px;
-  letter-spacing: 0.0824px;
+  letter-spacing: 0;
 }
 
 .move-approach-list {
   font-family: 'Inter', sans-serif;
   font-weight: 500;
-  font-size: 23.137px;
-  line-height: 62px;
+  font-size: 18px;
+  line-height: 36px;
   color: var(--text-darker);
-  letter-spacing: 0.0824px;
+  letter-spacing: 0;
 }
 
 .move-approach-list p {
@@ -2767,7 +2824,7 @@ p.card-description {
 }
 
 .founder-card {
-  background: white;
+  background: rgb(243, 243, 243);
   border-radius: 16px;
   overflow: hidden;
   display: grid;
@@ -2788,31 +2845,43 @@ p.card-description {
   justify-content: center;
 }
 
+.founder-heading {
+  text-align: center;
+  color: var(--text-dark);
+  letter-spacing: -0.53px;
+  margin-bottom: 50px;
+}
+
 .founder-name {
   font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 40px;
+  color: var(--text-dark);
+  margin: 0 0 15px;
+}
+
+.founder-name strong {
   font-weight: 700;
-  font-size: 32px;
-  line-height: 1.3;
-  color: var(--text-darker);
-  margin: 0 0 8px;
 }
 
 .founder-title {
   font-family: 'Inter', sans-serif;
-  font-weight: 600;
-  font-size: 18px;
-  line-height: 1.3;
-  color: var(--light-blue);
-  margin: 0 0 24px;
+  font-weight: 400;
+  font-size: 21px;
+  line-height: 40px;
+  color: var(--text-dark);
+  text-transform: uppercase;
+  margin: 0;
 }
 
 .founder-bio {
-  font-family: 'Inter', sans-serif;
-  font-weight: 400;
+  font-family: 'Manrope', 'Inter', sans-serif;
+  font-weight: 500;
   font-size: 16px;
-  line-height: 1.6;
-  color: var(--text-dark);
-  margin: 0 0 16px;
+  line-height: 36px;
+  color: #111111;
+  margin: 0 0 20px;
 }
 
 .founder-bio:last-child {
@@ -3155,14 +3224,14 @@ p.card-description {
   .walk-secondary-subtitle,
   .move-secondary-subtitle,
   .move-approach-intro {
-    font-size: 20px;
-    line-height: 28px;
+    font-size: 16px;
+    line-height: 26px;
   }
   
   .walk-about-text,
   .move-approach-list {
-    font-size: 18px;
-    line-height: 32px;
+    font-size: 16px;
+    line-height: 30px;
   }
   
   .walk-benefits-heading {
