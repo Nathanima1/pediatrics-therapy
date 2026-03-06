@@ -211,8 +211,7 @@ body:hover {
   transition: transform 0.3s;
 }
 
-.nav-item.active .arrow,
-.nav-link.active .arrow {
+.nav-item.active .arrow {
   transform: rotate(180deg);
 }
 
@@ -297,7 +296,8 @@ body:hover {
   transition: all 0.3s;
 }
 
-.contact-btn:hover {
+.contact-btn:hover,
+.contact-btn.active {
   background: var(--main-blue);
   color: white;
 }
@@ -1227,7 +1227,8 @@ p.card-description {
   font-size: 24px;
   line-height: 1.6;
   color: var(--text-dark);
-  max-width: 600px;
+  /* max-width: 600px; */
+  max-width: 500px;
   margin: 0;
 }
 #about .page-description,
@@ -1370,12 +1371,12 @@ p.card-description {
 
 .contact-hero .page-title,
 .contact-hero .page-subtitle,
-.contact-hero .page-description,
 .contact-hero .breadcrumb,
 .contact-hero .breadcrumb a,
 .contact-hero .breadcrumb .separator {
   color: var(--main-blue);
 }
+.contact-hero .page-description {color: var(--text-dark);}
 
 .contact-hero .hero-bg-overlay {
   position: absolute;
@@ -1409,7 +1410,7 @@ p.card-description {
   margin-bottom: 27px;
 }
 
-.contact-description {
+/* .contact-description {
   font-family: 'Inter', sans-serif;
   font-weight: 300;
   font-size: 28px;
@@ -1417,7 +1418,7 @@ p.card-description {
   letter-spacing: -0.3343px;
   max-width: 520px;
   color: #000;
-}
+} */
 
 /* Contact Secondary Section */
 .contact-secondary {
@@ -1709,7 +1710,7 @@ p.card-description {
   right: 0;
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 80px 60px 0;
+  padding: 80px 60px 0 120px;
   z-index: 1;
 }
 
@@ -1761,7 +1762,8 @@ p.card-description {
   font-weight: 700;
   font-size: 32px;
   line-height: 1.3;
-  color: var(--text-darker);
+  /* color: var(--text-darker); */
+  color: var(--text-dark);
   text-align: center;
   margin: 0 0 40px;
 }

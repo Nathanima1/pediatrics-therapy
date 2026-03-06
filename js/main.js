@@ -210,6 +210,7 @@ function initActiveStates() {
   
   // Highlight current page in navigation
   const currentPath = window.location.pathname;
+  const isContactPage = currentPath.endsWith('contact.html');
   const navLinks = document.querySelectorAll('.nav-link, .submenu-link, .mobile-nav-link');
   
   navLinks.forEach(link => {
@@ -218,12 +219,21 @@ function initActiveStates() {
       link.classList.add('active');
       
       // If it's a submenu link, also activate the parent
+      // But NOT for the contact page — Contact lives in the header button, not under PLAY
       const parentNav = link.closest('.nav-item.has-submenu');
-      if (parentNav) {
+      if (parentNav && !isContactPage) {
         parentNav.querySelector('.nav-link').classList.add('active');
       }
     }
   });
+
+  // Activate the CONTACT header button when on the contact page
+  if (isContactPage) {
+    const contactBtn = document.querySelector('.contact-btn.desktop-contact');
+    if (contactBtn) {
+      contactBtn.classList.add('active');
+    }
+  }
 }
 
 // ========== CARD ANIMATIONS (Optional Enhancement) ==========
