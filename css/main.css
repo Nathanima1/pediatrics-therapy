@@ -1245,6 +1245,31 @@ p.card-description {
   height: 80px;
 }
 
+/* Blue pill label for Play hero */
+.hero-pill {
+  display: inline-block;
+  background: var(--light-blue);
+  color: white;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.85px;
+  text-transform: uppercase;
+  padding: 5px 10px;
+  border-radius: 5.6px;
+  margin-bottom: 12px;
+  line-height: 1;
+}
+
+/* Play hero title - match Walk/Move bold style */
+.play-title {
+  font-weight: 700 !important;
+}
+
+.play-description {
+  font-weight: 300;
+}
+
 /* Page-specific hero colors */
 .play-hero .page-title,
 .play-hero .page-subtitle,
@@ -1286,7 +1311,6 @@ p.card-description {
   line-height: 57.861px;
   letter-spacing: -1.2251px;
   color: #F0F4F6 !important;
-  text-transform: uppercase;
   margin-bottom: 10px;
 }
 
@@ -3045,9 +3069,18 @@ p.card-description {
   
   /* Original fixes */
   .about-hero-content,
-  .sensory-content-block,
-  .clinic-content {
+  .sensory-content-block {
     grid-template-columns: 1fr;
+  }
+  
+  .clinic-content {
+    flex-direction: column;
+    gap: 40px;
+  }
+  
+  .map-container {
+    width: 100%;
+    height: 400px;
   }
   
   .secondary-card .founder-card {
@@ -3106,38 +3139,207 @@ p.card-description {
 @media (max-width: 768px) {
   /* ARCHETYPE 2: Mobile fixes for secondary pages */
   .hero-secondary {
-    height: 400px; /* Further reduce on mobile */
+    height: 500px;
+    min-height: 0;
+    overflow: hidden; /* Clip image to straight bottom edge */
   }
   
+  /* 30% black overlay on hero background */
+  .hero-secondary .hero-background::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+  }
+  
+  /* Scale hero image to crop the wavy bottom baked into source images */
+  .hero-secondary .hero-bg-image {
+    object-position: center center;
+    transform: scale(1.25);
+    transform-origin: center center;
+  }
+  
+  /* Play page needs more aggressive crop - wave is larger */
+  .play-hero .hero-bg-image {
+    transform: scale(1.4);
+    transform-origin: right top;
+  }
+  
+  /* Walk page - enlarge to crop wavy bottom */
+  .walk-hero .hero-bg-image {
+    transform: scale(1.4);
+  }
+  
+  /* Vertically + horizontally center hero content */
   .hero-secondary .hero-content-wrapper {
-    padding: 50px 20px 0;
-    text-align: center;
-  }
-  
-  .breadcrumb {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
+    padding: 0 24px 40px;
+    text-align: center;
+    z-index: 2;
   }
   
-  .page-title,
-  .page-subtitle,
-  .page-description {
+  /* Hide breadcrumbs on mobile */
+  .breadcrumb {
+    display: none;
+  }
+  
+  /* All hero text white on mobile */
+  .hero-secondary .page-title,
+  .hero-secondary .page-subtitle,
+  .hero-secondary .page-description,
+  .contact-hero .page-title,
+  .contact-hero .page-description {
+    color: white !important;
     text-align: center;
+  }
+  
+  .hero-secondary .page-title {
+    font-size: 34px;
+    margin: 0 0 19px;
+    line-height: 1.2;
+  }
+  
+  .hero-secondary .page-description {
+    font-size: 18px;
+    line-height: 1.5;
+    max-width: 348px;
+    margin: 0 auto;
+  }
+  
+  /* Pill label spacing */
+  .hero-pill {
+    margin-bottom: 16px;
+  }
+  
+  /* Walk/Move labels centered */
+  .walk-label,
+  .move-label {
+    margin-bottom: 16px;
+    font-size: 14px;
+  }
+  
+  /* Walk/Move titles sized for mobile */
+  .walk-title,
+  .move-title {
+    font-size: 34px !important;
+    line-height: 1.2 !important;
+    margin-bottom: 19px !important;
+  }
+  
+  .walk-description,
+  .move-description {
+    font-size: 18px !important;
+    line-height: 1.5 !important;
+    max-width: 348px;
+  }
+  
+  /* Move page: enlarge background to crop wavy line */
+  .move-hero .hero-bg-image {
+    transform: scale(1.4);
+  }
+  
+  /* Move page: center the woman+dog image and overlay it */
+  .move-woman-dog {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    right: auto;
+    width: 100%;
+    height: 100%;
+    transform: translateX(-50%);
+    z-index: 0;
+  }
+  
+  .move-woman-dog img {
+    object-fit: cover;
+    object-position: center center;
+  }
+  
+  /* Move hero: use ::before on the section itself so the 30% overlay
+     covers BOTH the background image and the woman+dog layer */
+  .move-hero .hero-background::after {
+    display: none; /* Disable the per-background overlay */
+  }
+  
+  .move-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+    pointer-events: none;
+  }
+  
+  .move-hero .hero-content-wrapper {
+    z-index: 2;
+  }
+  
+  /* Hide the underline divider on mobile */
+  .hero-title-underline {
+    display: none;
+  }
+  
+  /* Override contact hero overlay for mobile (use the black overlay instead) */
+  .contact-hero .hero-bg-overlay {
+    display: none;
   }
   
   .secondary-container {
-    padding: 0 20px; /* Mobile-friendly padding */
+    padding: 0; /* Full-width on mobile */
   }
   
+  /* Full-width panel, no border-radius, no overlap */
   .secondary-card {
-    top: -150px; /* Minimal overlap on mobile */
-    margin-bottom: -150px;
-    padding: 70px 30px 30px;
-    border-radius: 12px;
+    top: 0;
+    margin-bottom: 0;
+    padding: 40px 20px 30px;
+    border-radius: 0;
+    box-shadow: none;
   }
   
-  .section-icon-centered img {
-    width: 60px;
-    height: 60px;
+  /* Keep sub-page icons visible but hide on contact */
+  .section-icon-centered {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    text-align: center;
+    margin: -40px auto 20px;
+  }
+  
+  /* Contact card: full-width, no decorative border/radius */
+  .contact-secondary .secondary-container {
+    padding: 0;
+  }
+  
+  .contact-card {
+    top: 0;
+    margin-bottom: 0;
+    border: none;
+    border-radius: 0;
+    padding: 40px 20px;
+    min-height: auto;
+    background: white;
+  }
+  
+  /* Hide contact icon circle on mobile */
+  .contact-icon {
+    display: none;
   }
   
   .secondary-card .section-title {
@@ -3266,6 +3468,21 @@ p.card-description {
     text-align: center;
   }
   
+  /* Stack checklist columns vertically on mobile */
+  .condition-checklist {
+    flex-direction: column;
+    gap: 0;
+  }
+  
+  .checklist-column p {
+    white-space: normal;
+  }
+  
+  .condition-description {
+    font-size: 16px;
+    line-height: 28px;
+  }
+  
   .solution-features,
   .signs-grid,
   .approach-grid,
@@ -3281,52 +3498,73 @@ p.card-description {
     grid-template-columns: 1fr;
   }
   
+  .clinic-section {
+    padding: 40px 20px;
+  }
+  
+  .clinic-section .clinic-title,
+  .clinic-section .clinic-subtitle,
+  .clinic-section .clinic-content {
+    margin-bottom: 40px;
+  }
+  
+  .clinic-title {
+    font-size: 32px;
+  }
+  
   .clinic-content {
-    padding: 0 30px;
+    flex-direction: column;
+    gap: 40px;
+    padding: 0;
   }
   
   .map-container {
-    height: 300px;
+    width: 100%;
+    height: 280px;
+    border-width: 12px;
+  }
+  
+  .clinic-details {
+    gap: 30px;
   }
 }
 
 @media (max-width: 480px) {
   /* ARCHETYPE 2: Extra small mobile devices */
   .hero-secondary {
-    height: 350px;
+    height: 400px;
   }
   
   .hero-secondary .hero-content-wrapper {
-    padding: 40px 20px 0;
-    text-align: center;
+    padding: 0 20px 30px;
   }
   
-  .breadcrumb {
-    font-size: 12px;
-    margin-bottom: 20px;
-    justify-content: center;
-  }
-  
-  .page-title {
+  .hero-secondary .page-title {
     font-size: 28px;
     letter-spacing: -1px;
-    text-align: center;
   }
   
-  .page-description {
+  .hero-secondary .page-description {
     font-size: 16px;
-    text-align: center;
+    max-width: 300px;
+  }
+  
+  .walk-title,
+  .move-title {
+    font-size: 28px !important;
+  }
+  
+  .walk-description,
+  .move-description {
+    font-size: 16px !important;
+    max-width: 300px;
   }
   
   .secondary-card {
-    top: -100px; /* Minimal overlap */
-    margin-bottom: -100px;
-    padding: 60px 20px 20px;
-  }
-  
-  .section-icon-centered img {
-    width: 50px;
-    height: 50px;
+    top: 0;
+    margin-bottom: 0;
+    padding: 30px 16px 20px;
+    border-radius: 0;
   }
   
   .secondary-card .section-title {
