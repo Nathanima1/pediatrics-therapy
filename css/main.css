@@ -35,7 +35,7 @@
   --red: #E7000B;
   --green: #00A63E;
   --text-dark: #45556C;
-  --text-darker: #0F172B;
+  --text-darker: #45556C;
   --bg-light: #FAFBFB;
   --bg-white: #FFFFFF;
   --max-width: 1500px;
@@ -981,6 +981,14 @@ p.card-description {
     z-index: 10;
     position: relative;
   }
+
+  .hero-right::after {
+    display: none;
+  }
+
+  .hero-cushions {
+    display: none;
+  }
   
   .hero-image-wrapper {
     margin-top: 0;
@@ -996,6 +1004,57 @@ p.card-description {
   .footer-content {
     flex-direction: column;
     gap: 40px;
+  }
+
+  /* Show mobile menu on tablet */
+  .desktop-nav,
+  .desktop-contact {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .header-content {
+    padding: 20px 30px;
+  }
+
+  .logo-img {
+    height: 60px;
+  }
+
+  .footer-content {
+    padding: 30px 20px;
+    flex-direction: column;
+    height: auto;
+    gap: 20px;
+  }
+
+  .footer-bio {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+
+  .footer-contact {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px 20px;
+  }
+
+  .footer-bottom .divider {
+    display: none;
+  }
+
+  .footer-links {
+    flex-direction: column;
+    gap: 8px;
   }
 }
 
@@ -1035,6 +1094,7 @@ p.card-description {
   
   .hero-right {
     margin-bottom: -80px;
+    margin-top: 40px;
   }
   
   .hero-cushions {
@@ -1708,6 +1768,7 @@ p.card-description {
   width: 100%;
   min-height: 630px;
   overflow: visible;
+  z-index: 1;
 }
 
 .hero-secondary .hero-background {
@@ -1724,7 +1785,17 @@ p.card-description {
   height: 100%;
   display: block;
   object-fit: cover;
+  object-position: center bottom;
+}
+
+/* Play & Move heroes: don't crop from top as aggressively */
+.play-hero .hero-bg-image {
   object-position: center center;
+}
+
+/* About hero: keep heads visible — anchor to top-right */
+.about-hero .hero-bg-image {
+  object-position: right top;
 }
 
 .hero-secondary .hero-content-wrapper {
@@ -1743,6 +1814,7 @@ p.card-description {
   position: relative;
   background: var(--bg-light);
   padding: 0 0 100px;
+  z-index: 2; /* Above hero so secondary card overlaps curve */
   /* NO negative margin - starts right after hero */
 }
 
@@ -1773,12 +1845,12 @@ p.card-description {
 /* White card - THIS is what overlaps the hero with negative positioning */
 .secondary-card {
   position: relative;
-  top: -200px; /* Pulls WHITE CARD up to overlap hero */
+  top: -230px; /* Pulls WHITE CARD up to overlap hero */
   background: white;
   border-radius: 16px;
   padding: 100px 60px 60px; /* Extra top padding for the icon */
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
-  margin-bottom: -200px; /* Compensate for the negative top so content below flows correctly */
+  margin-bottom: -230px; /* Compensate for the negative top so content below flows correctly */
 }
 
 .secondary-card .section-title {
@@ -1789,7 +1861,7 @@ p.card-description {
   /* color: var(--text-darker); */
   color: var(--text-dark);
   text-align: center;
-  margin: 0 0 40px;
+  margin: 0 0 70px;
 }
 
 .content-description {
@@ -1819,6 +1891,27 @@ p.card-description {
 .secondary-card .solution-features,
 .secondary-card .founder-card {
   margin-top: 40px;
+}
+
+/* Processing Flow two-column layout (Understanding page) */
+.processing-flow-columns {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  max-width: 1000px;
+  margin: 0 auto 60px;
+}
+
+.processing-flow-diagram,
+.processing-flow-legend {
+  flex: 1;
+}
+
+.processing-flow-diagram img,
+.processing-flow-legend img {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 .secondary-card .solution-features {
@@ -2426,7 +2519,7 @@ p.card-description {
 .walk-secondary-section.custom-orthotic-support {
   /* background: linear-gradient(176.448deg, rgb(247, 250, 254) 38.614%, rgb(129, 162, 246) 135.72%); */
   background-blend-mode: normal;
-  padding: 60px 0;
+  padding: 60px;
 }
 
 .walk-secondary-section.custom-orthotic-support::before {
@@ -2464,7 +2557,7 @@ p.card-description {
 /* About Orthotics Section (gradient background) */
 .walk-secondary-section.about-orthotics {
   background: linear-gradient(176.448deg, rgb(247, 250, 254) 38.614%, rgb(129, 162, 246) 135.72%);
-  padding: 60px 76px 154px;
+  padding: 60px;
 }
 
 .walk-secondary-section.about-orthotics::before {
@@ -2496,11 +2589,7 @@ p.card-description {
   align-items: center;
   justify-content: space-between;
   gap: 80px;
-  padding: 0 80px;
-}
-
-.walk-secondary-section.about-orthotics .walk-secondary-container {
-  padding: 0;
+  padding: 0 60px;
 }
 
 /* Image Styles */
@@ -2649,7 +2738,7 @@ p.card-description {
 /* Life-changing Treatment Section (white/gradient background) */
 .move-secondary-section.life-changing-treatment {
   /* background: linear-gradient(176.977deg, rgb(247, 250, 254) 38.614%, rgb(129, 162, 246) 135.72%); */
-  padding: 155px 0;
+  padding: 60px;
   position: relative;
 }
 
@@ -2672,7 +2761,7 @@ p.card-description {
 /* Our Approach Section (gradient background) */
 .move-secondary-section.our-approach {
   background: linear-gradient(175.871deg, rgb(247, 250, 254) 38.614%, rgb(129, 162, 246) 135.72%);
-  padding: 140px 0;
+  padding: 60px;
   position: relative;
 }
 
@@ -2704,11 +2793,7 @@ p.card-description {
   align-items: center;
   justify-content: space-between;
   gap: 90px;
-  padding: 0 80px;
-}
-
-.move-secondary-section.our-approach .move-secondary-container {
-  padding: 0 67px;
+  padding: 0 60px;
 }
 
 /* Image Styles */
@@ -2876,6 +2961,7 @@ p.card-description {
   color: var(--text-dark);
   letter-spacing: -0.53px;
   margin-bottom: 50px;
+  margin-top: 50px;
 }
 
 .founder-name {
@@ -2906,7 +2992,7 @@ p.card-description {
   font-weight: 500;
   font-size: 16px;
   line-height: 36px;
-  color: #111111;
+  color: var(--text-dark);
   margin: 0 0 20px;
 }
 
@@ -3110,10 +3196,11 @@ p.card-description {
     padding: 0 40px;
   }
 
+  .walk-secondary-section.custom-orthotic-support,
   .walk-secondary-section.about-orthotics,
   .move-secondary-section.life-changing-treatment,
   .move-secondary-section.our-approach {
-    padding: 60px 40px 100px;
+    padding: 60px 40px;
   }
   
   .walk-secondary-image,
@@ -3206,7 +3293,7 @@ p.card-description {
   }
   
   .hero-secondary .page-title {
-    font-size: 34px;
+    font-size: 55px;
     margin: 0 0 19px;
     line-height: 1.2;
   }
@@ -3218,6 +3305,16 @@ p.card-description {
     margin: 0 auto;
   }
   
+  /* About hero: show all 4 people on mobile */
+  .about-hero .hero-bg-image {
+    object-fit: cover;
+    object-position: 75% top;
+  }
+  
+  .about-hero .hero-background {
+    background-color: #0a8a4a;
+  }
+
   /* Pill label spacing */
   .hero-pill {
     margin-bottom: 16px;
@@ -3233,7 +3330,7 @@ p.card-description {
   /* Walk/Move titles sized for mobile */
   .walk-title,
   .move-title {
-    font-size: 34px !important;
+    font-size: 55px !important;
     line-height: 1.2 !important;
     margin-bottom: 19px !important;
   }
@@ -3319,7 +3416,7 @@ p.card-description {
     left: auto;
     transform: none;
     text-align: center;
-    margin: -40px auto 20px;
+    margin: -70px auto 0px;
   }
   
   /* Contact card: full-width, no decorative border/radius */
@@ -3340,6 +3437,17 @@ p.card-description {
   /* Hide contact icon circle on mobile */
   .contact-icon {
     display: none;
+  }
+
+  /* Stack processing flow images on mobile */
+  .processing-flow-columns {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .processing-flow-legend {
+    width: 70%;
+    margin: 0 auto;
   }
   
   .secondary-card .section-title {
@@ -3413,10 +3521,11 @@ p.card-description {
     padding: 0 20px;
   }
 
+  .walk-secondary-section.custom-orthotic-support,
   .walk-secondary-section.about-orthotics,
   .move-secondary-section.life-changing-treatment,
   .move-secondary-section.our-approach {
-    padding: 60px 20px 80px;
+    padding: 60px 20px 40px;
   }
   
   .walk-secondary-title,
@@ -3464,8 +3573,8 @@ p.card-description {
   
   .condition-item {
     flex-direction: column;
-    align-items: center;
-    text-align: center;
+    align-items: flex-start;
+    text-align: left;
   }
   
   /* Stack checklist columns vertically on mobile */
@@ -3540,7 +3649,7 @@ p.card-description {
   }
   
   .hero-secondary .page-title {
-    font-size: 28px;
+    font-size: 55px;
     letter-spacing: -1px;
   }
   
@@ -3551,7 +3660,7 @@ p.card-description {
   
   .walk-title,
   .move-title {
-    font-size: 28px !important;
+    font-size: 55px !important;
   }
   
   .walk-description,
@@ -3569,6 +3678,7 @@ p.card-description {
   
   .secondary-card .section-title {
     font-size: 20px;
+    padding-bottom: 30px;
   }
   
   .accordion-title {
