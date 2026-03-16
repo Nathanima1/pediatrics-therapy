@@ -1814,7 +1814,7 @@ p.card-description {
   right: 0;
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 80px 60px 0 120px;
+  padding: 20px 60px 0 120px;
   z-index: 1;
 }
 
@@ -3149,7 +3149,7 @@ p.card-description {
   }
   
   .hero-secondary .hero-content-wrapper {
-    padding: 60px 40px 0;
+    padding: 20px 40px 0;
   }
   
   .secondary-container {
