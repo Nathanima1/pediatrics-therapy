@@ -1316,8 +1316,16 @@ p.card-description {
   text-transform: uppercase;
   padding: 5px 10px;
   border-radius: 5.6px;
+  margin-top: 70px;
   margin-bottom: 12px;
   line-height: 1;
+}
+
+/* When a pill/label precedes the title, reduce the title's top margin */
+.hero-pill + .page-title,
+.walk-label + .page-title,
+.move-label + .page-title {
+  margin-top: 20px;
 }
 
 /* Play hero title - match Walk/Move bold style */
@@ -1351,16 +1359,17 @@ p.card-description {
 .walk-label {
   display: inline-block;
   background: var(--red);
-  padding: 7px 24px;
-  border-radius: 8px;
+  padding: 5px 10px;
+  border-radius: 5.6px;
   font-family: 'Inter', sans-serif;
   font-weight: 700;
-  font-size: 18px;
-  line-height: 16px;
-  letter-spacing: 1.2px;
+  font-size: 14px;
+  line-height: 1;
+  letter-spacing: 0.85px;
   text-transform: uppercase;
   color: white;
-  margin-bottom: 10px;
+  margin-top: 70px;
+  margin-bottom: 12px;
 }
 
 .walk-title {
@@ -1412,16 +1421,17 @@ p.card-description {
 .move-label {
   display: inline-block;
   background: var(--green);
-  padding: 7px 24px;
-  border-radius: 8px;
+  padding: 5px 10px;
+  border-radius: 5.6px;
   font-family: 'Inter', sans-serif;
   font-weight: 700;
-  font-size: 18px;
-  line-height: 16px;
-  letter-spacing: 1.2px;
+  font-size: 14px;
+  line-height: 1;
+  letter-spacing: 0.85px;
   text-transform: uppercase;
   color: white;
-  margin-bottom: 37px;
+  margin-top: 70px;
+  margin-bottom: 12px;
 }
 
 .move-title {
@@ -3316,12 +3326,14 @@ p.card-description {
 
   /* Pill label spacing */
   .hero-pill {
+    margin-top: 0;
     margin-bottom: 16px;
   }
   
   /* Walk/Move labels centered */
   .walk-label,
   .move-label {
+    margin-top: 0;
     margin-bottom: 16px;
     font-size: 14px;
   }
