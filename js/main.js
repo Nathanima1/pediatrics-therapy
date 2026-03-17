@@ -268,10 +268,16 @@ function initCardAnimations() {
 // ========== ACCORDION (ARCHETYPE 2) ==========
 function initAccordions() {
   const accordionTriggers = document.querySelectorAll('.accordion-trigger');
-  
+
+  // Set max-height on any accordion that starts with .active
+  document.querySelectorAll('.accordion-item.active .accordion-content').forEach(content => {
+    content.style.maxHeight = content.scrollHeight + 'px';
+  });
+
   accordionTriggers.forEach(trigger => {
     trigger.addEventListener('click', function() {
       const accordionItem = this.closest('.accordion-item');
+      const content = accordionItem.querySelector('.accordion-content');
       const isActive = accordionItem.classList.contains('active');
       
       // Close all other accordions
@@ -279,6 +285,7 @@ function initAccordions() {
         if (item !== accordionItem) {
           item.classList.remove('active');
           item.querySelector('.accordion-trigger').setAttribute('aria-expanded', 'false');
+          item.querySelector('.accordion-content').style.maxHeight = null;
         }
       });
       
@@ -286,9 +293,11 @@ function initAccordions() {
       if (isActive) {
         accordionItem.classList.remove('active');
         this.setAttribute('aria-expanded', 'false');
+        content.style.maxHeight = null;
       } else {
         accordionItem.classList.add('active');
         this.setAttribute('aria-expanded', 'true');
+        content.style.maxHeight = content.scrollHeight + 'px';
       }
     });
   });
