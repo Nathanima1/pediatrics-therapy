@@ -1403,7 +1403,7 @@ p.card-description {
 /* Move Hero - Layered image structure */
 .move-woman-dog {
   position: absolute;
-  right: 263px; /* 1500 - 685 - 552 = 263px from right edge to center in 1500px container */
+  right: 163px; /* 1500 - 685 - 552 = 263px from right edge to center in 1500px container */
   top: -43px;
   width: 553px;
   height: 789px;
@@ -1415,7 +1415,7 @@ p.card-description {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  object-position: center bottom;
+  object-position: center center;
 }
 
 .move-label {
